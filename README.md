@@ -1,3 +1,5 @@
+# This readme will be updated by end of September
+
 # edm_generator
 Using LSTM, make your own EDM music!
 
