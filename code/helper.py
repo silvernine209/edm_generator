@@ -1,3 +1,5 @@
+import matplotlib.pyplot as plt
+
 # Don't always choose the most likely prediction
 def sample(preds, temperature):
     preds = np.asarray(preds).astype('float64')
