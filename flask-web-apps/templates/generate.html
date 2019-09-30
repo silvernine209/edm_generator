@@ -1,0 +1,30 @@
+<div align=middle>
+    <img src=" {{url_for('static', filename='edm_generator.JPG',width=20)}}">
+</div>
+
+<div align=middle>
+    <h1><a href="/">Generate Song</a></h1>
+    <h1><a href="/midiplayer">Play MIDI Song</a></h1>
+    <hr />
+    <form method="POST">
+        <br>
+        Temperature :
+        <input type="text" name="temperature">
+        <br>
+        <br>
+        Melody Length :
+        <input type="text" name="melody_length">
+        <br>
+        <br>
+        <input type="submit" value="Generate New EDM">
+        <hr />
+        <p align=middle><a href="https://surikov.github.io/webaudiofont/">source</a></p>
+    </form>
+</div>
+
+
+<p>
+  {% if prediction %}
+    prediction: {{ prediction|safe}}
+  {% endif%}
+</p>
