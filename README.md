@@ -6,46 +6,35 @@ I went to EDM concert for the first time in August 2019. Then, I wanted to gener
 
 [Presentation Link - Google Slides](https://docs.google.com/presentation/d/1zXZ93rWshsaOpxh_lYr6b3dzsdWjL1Ek0-7hRlvWi_o/edit)  
 [Presentation Link - Live](https://youtu.be/gTKVusBObZc)  
-[Flask Demo](https://drive.google.com/file/d/1c9HJYBEF0yTOu15Aq4b0q-I-P7v8MHAf/view?usp=sharing)
+[Flask Demo](https://www.youtube.com/watch?v=-h8f86n0Ho0)
+
+## Dataset Used
+MIDI (Musical Instrument Digital Interface) file format was utilized in this project for data type of training set. First of many big advantages of MIDI format is that it is very **lightweight**, therefore very **scalable**. MIDI format is 0.05% in size compared to .wave format to represent similar length of sound. Also, because it is very lightweight, it is the perfect data type for Flask app in which EDM music is very quickly generated and played. Secondly, user can play generated melody and percussion with **ANY** type of instrument using MIDI player. Lastly and most importantly, notes are represented as 128 vectors in MIDI file format. This allowed very efficient and effective feature engineering process. Also, vector representaion of notes were key component of allowing LSTM models to generate very fluidic and pleasant melodies and percussions. Below are two sources from which MIDI files were obtained for EDM and Classical music. 
+
+EDM - [Link](https://www.classicalarchives.com/midi.html)  
+Classical - [Link](https://www.classicalarchives.com/midi.html)
 
 ## Methods Used
-* Sequence Generation 
-* Web Scraping
+* AWS **(GPU-enabled cloud trainig)**
 * Data Preprocessing
 * Feature Engineering
-* Flask
 * etc.
 
 ## Notable Technologies Used
 * Python 3, Jupyter Notebook
-* Pandas, Numpy, Matplotlib, Seaborn
-* Selenium, BeautifulSoup
-* Scikit-learn
-* RandomizedSearchCV
+* Pypianoroll, Music21 **(MIDI file format encoder/decoder/player)**
+* Pandas, Numpy, Matplotlib, Seaborn **(Data Processing/Visualization tools)**
+* TensorFlow, Keras, Scikit-learn **(LSTM and Neural Network Models)**
+* Flask **(Demo generation)**
 * etc. 
 
 ## Feature Engineering
-Project initially started with only using weather data (temperature, humidity, pressure, wind condition, and weather conditions) because I had a hypothesis that weather is highly correlated to crime rate in general. Then, poor model performance guided me to add more features (total rides per day and unemployment rates). My most time was spent on taking an iterative approach to feature engineering.
-
-* **Temperature & Its Moving Avg**- high/low of the day. Hotter it is, people are more hot-tempered
-* **Humidity** - How uncomfortable are you?
-* **Barometer** - Might affect the mood?
-* **Wind Speed** - Less crime in windy days
-* **Weather Description** - Clear/Foggy/Overcast/etc..
-* **Day of Week** - (Mon - Sun) More crimes on weekends?
-* **Month of the Year** - Some crimes are seasonal (pick-pocketing in NYC during Christmas and such)
-* **Total Rideds** - Bus/Subway/etc. More people = more crime
-* **Unemployment Rate** - Some resort to crimes
 
 ## Model 
-Lasso model was used as a baseline model with only weather data (all numerical features). As more features were added (day of the week, month of the year, weather description, and etc.), I assumed complex interactions among features since predicting a crime rate is a very complex task such as predicting stock price. Therefore, I moved onto ElasticNet model after applying 2nd degree polynomial features to existing features, which resulted in 595 features. ElasticNet was a perfect model for this case since RandomizedSearchCV was utilized on training dataset, this was very important as it applied automatic selection of hyper-parameter and feature selection on top of performing cross validation on the training data.
-
-Below is R^2 score of various combination of models and features.
 ![models](img/models.jpg)
 
 ## Result 
-Below is actual vs predicted and residual plot of ElasticNet model that had the best performance. Its MAE (Mean Absolute Error) score was 50, which means my model is able to predict Chicago's crime rate with +- 50 crimes per day. Coefficients from ElasticNet picked up temperature, total ridership, and unemployment as the most important features that affect crime rate.
 ![results](img/result.JPG)
 
 ## Conclusion
-This project was all about identifying the right dataset to take advantage of highly explainable linear regression models. Even though my model was able to perform very well with R^2 score of 0.82 on the test set, further investigation is needed to validate the process and measures taken in this project. For future expansion, I would like to add more data such as average income, population density, and etc.
+
