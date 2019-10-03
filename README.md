@@ -1,27 +1,19 @@
-# This readme will be updated by end of September
+# EDM Generator Using LSTM
+In this project, I trained **LSTM models** to generate melody and percussion, which are then combined to generate **EDM music** with sprinkles of **Classical music**. Then, **nueral network classifier** was built to gauge output from LSTM models. Finally, **interactive Flask app** was built to utilize pretrained models to easily generate and play songs.
 
-# edm_generator
-Using LSTM, make your own EDM music!
+## Project Intro/Objective
+I went to EDM concert for the first time in August 2019. Then, I wanted to generate my own **endless** EDM music, and this was done by infusing Classical music into it. Besides being unique, adding Classical music was very advantageous to overall flow and this will be discussed in "Feature Engineering" section. Also, **MIDI file format** was used for dataset, which means that instruments for generated melody and percussions can be altered very easily.
 
 [Presentation Link - Google Slides](https://docs.google.com/presentation/d/1zXZ93rWshsaOpxh_lYr6b3dzsdWjL1Ek0-7hRlvWi_o/edit)  
 [Presentation Link - Live](https://youtu.be/gTKVusBObZc)  
 [Flask Demo](https://drive.google.com/file/d/1c9HJYBEF0yTOu15Aq4b0q-I-P7v8MHAf/view?usp=sharing)
 
-
-
-
-# Chicago Crime Rate Prediction
-I built a linear regression model (ElasticNet) to predict Chicago's daily crime rate by web scraping 10 years worth of various weather data. Then I added more data (total ridership and unemployment rate) on top of performing feature engineering.
-
-## Project Intro/Objective
-The City of Chicago spends more than $4 million dollars on the Chicago Police Department **DAILY**, which is 38% of their budget. Accurate,or any, prediction on daily crime rate can assist the City of Chicago with better budgeting for efficient use of resources.
-
 ## Methods Used
-* Linear Regression (ElasticNet)
+* Sequence Generation 
 * Web Scraping
 * Data Preprocessing
 * Feature Engineering
-* Data Visualization
+* Flask
 * etc.
 
 ## Notable Technologies Used
