@@ -62,8 +62,7 @@ Below is an example of classification performed by neural network classifier. As
 
 Here are three more examples of generated song that I liked! I will let these songs to speak themselves for how I was able to generate new EDM songs with success.  
 * [Play Example 1](https://drive.google.com/open?id=1IPOVDD_DdFx_EbKt2TdHw0siy1R73kUl)  
-* [Play Example 2](https://drive.google.com/open?id=1Wic2VTTiVIWFuwgUQLvyHcZFsE4tRdYI)  
-* [Play Example 3](https://drive.google.com/open?id=1DhxugaPpU8g3lapZGnrj99XZaQDnR4Ew)  
+* [Play Example 2](https://drive.google.com/open?id=1Wic2VTTiVIWFuwgUQLvyHcZFsE4tRdYI)   
 
 Again, here is link to an interactive Flask app that allows user to generate and play EDM music very easily while giving the option of changing instruments on the fly.  
 [Flask Demo](https://www.youtube.com/watch?v=-h8f86n0Ho0)
