@@ -41,12 +41,32 @@ As explained in "Dataset Used" section, adding Classical music into the training
 **Thirdly,** after instruments are added together and songs are aligned, **entire collection of songs were shifted**, or transposed, to generate more patterns that LSTM model can take advantage of when generating new patterns.  
 ![Transposing](img/vector_shifting2.PNG)
 
+Upshot of feature engineering mentioned above is to generate more patterns that share similar key range so that LSTM model can generate new fluidic and unique patterns.
 
 ## Model 
-![models](img/models.jpg)
+Below are three models that play integral part in this project.  
+* **LSTM Model for Melody Generation,**
+* **LSTM Model for Percussion Generation**
+* **Neural Network Classifier to Monitor LSTM Model's Performance**
+
+For each song, vector spaces were divided into melody and percussion parts to develop two LSTM models. LSTM models were independent of each other and this was totally okay since percussions weren't really dependent on melodies. As long as generated melodies and percussions were on the same tempo, coherent EDM song was created when the two were combined.
+
+LSTM models were trained on multiple **AWS GPU-enabled instances** for speed. **Iterative training process** with different number of sequences were used to predict the next sequence of melody and percussion. After testing from using 3 sequences to 150 sequences to predict the next sequence, using sequence number of 3 yielded the best result. Also, there were no validation or test dataset and each of the two LSTM models were **intentionally overfit** to the training data of melody and percussion. This was a sound approach since **probabilistic sampling of predictions** was used to vary the outcome.
+
+Finally, neural network classifier was built to classify different segments of generated song as either EDM or Classic. Besides simply listening to generated music and evaluating what has been generated, neural network classifier allowed more systematic and visual assessment of generated songs.
 
 ## Result 
-![results](img/result.JPG)
+Below is an example of classification performed by neural network classifier. As song is being played out from left to right, it is clear that generated song is a good mix of EDM and Classical components.  
+[Play Song - Classification](https://drive.google.com/open?id=1UuOAGYp6jM4kzl5Bwxwe8kgzn47m7LW0)  
+![Neural Network Classifier](img/nn_classifier.PNG)
+
+Here are three more examples of generated song that I liked! I will let these songs to speak themselves for how I was able to generate new EDM songs with success.  
+* [Example 1](https://drive.google.com/open?id=1IPOVDD_DdFx_EbKt2TdHw0siy1R73kUl)  
+* [Example 2](https://drive.google.com/open?id=1Wic2VTTiVIWFuwgUQLvyHcZFsE4tRdYI)  
+* [Example 3](https://drive.google.com/open?id=1DhxugaPpU8g3lapZGnrj99XZaQDnR4Ew)  
+
+Again, here is link to an interactive Flask app that allows user to generate and play EDM music very easily while giving the option of changing instruments on the fly.  
+![Flask Demo](img/flask_app.PNG)
 
 ## Conclusion
-
+Pipeline built in this project is very reliable and robust. With the same pipeline, genre of music for the MIDI files can be changed to anything else to yield equally good results. Also, models and pipeline built in this project are very lightweight, and I look forward to possibility of developing a mobile app. In this app, user can choose any collection of MIDI files to generate a song that is a smooth mixture of input songs. In follow-up project, I would like to explore pitch-tracking of user's hums as input melodies to generate new songs based on the melody from hum.
