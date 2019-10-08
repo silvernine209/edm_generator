@@ -21,6 +21,8 @@ Besides making genearted music sound interesting by infusing Classical music int
 * Feature Engineering
 * etc.
 
+## [Link to Blog](https://silvernine209.github.io/matthewlee.github.io/)
+
 ## Notable Technologies Used
 * Python 3, Jupyter Notebook
 * Pypianoroll, Music21 **(MIDI file format encoder/decoder/player)**
