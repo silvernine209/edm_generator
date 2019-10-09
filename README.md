@@ -71,3 +71,5 @@ Again, here is link to an interactive Flask app that allows user to generate and
 
 ## Conclusion
 Pipeline built in this project is very reliable and robust. With the same pipeline, genre of music for the MIDI files can be changed to anything else to yield equally good results. Also, models and pipeline built in this project are very lightweight, and I look forward to possibility of developing a mobile app. In this app, user can choose any collection of MIDI files to generate a song that is a smooth mixture of input songs. In follow-up project, I would like to explore pitch-tracking of user's hums as input melodies to generate new songs based on the melody from hum.
+
+## [Link to Blog](https://silvernine209.github.io/matthewlee.github.io/)
