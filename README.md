@@ -13,15 +13,13 @@ I went to EDM concert for the first time in August 2019. Then, I wanted to gener
 MIDI (Musical Instrument Digital Interface) file format was utilized in this project for data type of training set. First of many big advantages of MIDI format is that it is very **lightweight**, therefore very **scalable**. MIDI format is 0.05% in size compared to .wave format to represent similar length of sound. Also, because it is very lightweight, it is the perfect data type for Flask app in which EDM music is very quickly generated and played. Secondly, user can play generated melody and percussion with **ANY** type of instrument using MIDI player. Lastly and most importantly, chords/notes are represented as 128 vectors in MIDI file format. This allowed very efficient and effective feature engineering process. Also, **vector representaion** of notes were key component of allowing LSTM models to generate very fluidic and pleasant melodies and percussions. Below is a visual explaining vector representation of chords/notes.  
 ![Vector Representation](img/vector_representation.PNG)
 
-Besides making genearted music sound interesting by infusing Classical music into EDM music, it was also a strategic move. Melodies, or patterns, from EDM songs are very **catchy** and **simple**, but they tend to be very **distinct** from each other across different EDM songs. Because of this, LSTM model will be generate patterns that doesn't have smooth transitions. On the other hand, Classical music has **complex** but very **fluidic** patterns. Therefore, patterns from Classical music will act as linkage or bridge between distinct patterns of EDM music. At the end, generated EDM music will sound coherent without sounding like a random collection of different patterns of EDM songs.
+Besides making generated music sound interesting by infusing Classical music into EDM music, it was also a strategic move. Melodies, or patterns, from EDM songs are very **catchy** and **simple**, but they tend to be very **distinct** from each other across different EDM songs. Because of this, LSTM model will generate patterns that doesn't have smooth transitions. On the other hand, Classical music has **complex** but very **fluid** patterns. Therefore, patterns from Classical music will act as linkage or bridge between distinct patterns of EDM music. At the end, generated EDM music will sound coherent without sounding like a random collection of different patterns of EDM songs.
 
 ## Methods Used
 * AWS **(GPU-enabled cloud trainig)**
 * Data Preprocessing
 * Feature Engineering
 * etc.
-
-## [Link to Blog](https://silvernine209.github.io/matthewlee.github.io/)
 
 ## Notable Technologies Used
 * Python 3, Jupyter Notebook
