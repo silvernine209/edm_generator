@@ -10,7 +10,7 @@ I went to EDM concert for the first time in August 2019. Then, I wanted to gener
 ![Flask Demo](img/flask_app.PNG)
 
 ## Dataset Used
-MIDI (Musical Instrument Digital Interface) file format was utilized in this project for data type of training set. First of many big advantages of MIDI format is that it is very **lightweight**, therefore very **scalable**. MIDI format is 0.05% in size compared to .wave format to represent similar length of sound. Also, because it is very lightweight, it is the perfect data type for Flask app in which EDM music is very quickly generated and played. Secondly, user can play generated melody and percussion with **ANY** type of instrument using MIDI player. Lastly and most importantly, chords/notes are represented as 128 vectors in MIDI file format. This allowed very efficient and effective feature engineering process. Also, **vector representaion** of notes were key component of allowing LSTM models to generate very fluidic and pleasant melodies and percussions. Below is a visual explaining vector representation of chords/notes.  
+MIDI (Musical Instrument Digital Interface) file format was utilized in this project for data type of training set. First of many big advantages of MIDI format is that it is very **lightweight**, therefore very **scalable**. MIDI format is 0.05% in size compared to .wave format to represent similar length of sound. Also, because it is very lightweight, it is the perfect data type for Flask app in which EDM music is very quickly generated and played. Secondly, user can play generated melody and percussion with **ANY** type of instrument using MIDI player. Lastly and most importantly, chords/notes are represented as 128 vectors in MIDI file format. This allowed very efficient and effective feature engineering process. Also, **vector representaion** of notes were key component of allowing LSTM models to generate very fluid and pleasant melodies and percussions. Below is a visual explaining vector representation of chords/notes.  
 ![Vector Representation](img/vector_representation.PNG)
 
 Besides making generated music sound interesting by infusing Classical music into EDM music, it was also a strategic move. Melodies, or patterns, from EDM songs are very **catchy** and **simple**, but they tend to be very **distinct** from each other across different EDM songs. Because of this, LSTM model will generate patterns that doesn't have smooth transitions. On the other hand, Classical music has **complex** but very **fluid** patterns. Therefore, patterns from Classical music will act as linkage or bridge between distinct patterns of EDM music. At the end, generated EDM music will sound coherent without sounding like a random collection of different patterns of EDM songs.
@@ -30,7 +30,7 @@ Besides making generated music sound interesting by infusing Classical music int
 * etc. 
 
 ## Feature Engineering
-As explained in "Dataset Used" section, adding Classical music into the training data can be treated as a feature engineering since ultimate goal of this project is to generate new EDM music that is not just replicas of training data while having a smooth mix of patterns from training dataset. Intent of adding Classical music was to create a fluidic EDM music, and following feature engineering was done to maximize this effect.
+As explained in "Dataset Used" section, adding Classical music into the training data can be treated as a feature engineering since ultimate goal of this project is to generate new EDM music that is not just replicas of training data while having a smooth mix of patterns from training dataset. Intent of adding Classical music was to create a fluid EDM music, and following feature engineering was done to maximize this effect.
 
 **Firstly,** different instruments that carries melodies within same song were added together. By **adding vectors of different instruments**, I was able to generate just one vector that carried all melodies/patterns per song without having to throw away any information to comply with rigid input shape of LSTM architecture.
 ![Instrument Addition](img/vector_addition.PNG)
@@ -60,7 +60,7 @@ Below is an example of classification performed by neural network classifier. As
 * [Play Classified Song](https://drive.google.com/open?id=1UuOAGYp6jM4kzl5Bwxwe8kgzn47m7LW0)  
 ![Neural Network Classifier](img/nn_classifier.PNG)
 
-Here are three more examples of generated song that I liked! I will let these songs to speak themselves for how I was able to generate new EDM songs with success.  
+Here are two more examples of generated songs that I liked! I will let these songs to speak for themselves for how I was able to generate new EDM songs with success.  
 * [Play Example 1](https://drive.google.com/open?id=1IPOVDD_DdFx_EbKt2TdHw0siy1R73kUl)  
 * [Play Example 2](https://drive.google.com/open?id=1Wic2VTTiVIWFuwgUQLvyHcZFsE4tRdYI)   
 
